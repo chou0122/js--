@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //promise以function包裝使用
+        const mypromise=(pid=1)=>{
+            return new promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    Math.random()>.5?resolve('000-'+pid):reject('xxx-'+pid);
+                },500*Math.random())
+            });
+        };
+        for (let i=0;i<10;i++){
+            //在迴圈內，可能不會依照順序執行(若要依序執行應該使用async/await不會依照順序執行(若要依序執行應該使用async/await)
+            mypromise(1)
+                .then(result=>console.log({result}))
+                .catch(ex=>console.log({ex}));
+        }
+    </script>    
+</body>
+</html>

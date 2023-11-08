@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        function myPromise(a = 0) {
+        return new Promise((resolve, reject) => {
+          const ms = 500 + Math.floor(Math.random() * 1000);
+        setTimeout(() => {
+            resolve({ a, ms });
+        }, ms);
+    });
+}
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
+        this.getInfo = function(){
+            return this.name + ':' + this.age; 
+        }
+    }
+
+    Person.prototype.tostring = function(){
+        return JSON.stringify(this);
+    };
+    var b = new Person('Bill', 32);
+    console.log( b.getInfo() );
+    console.log( b.name);
+        dosomething();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    //     //catch()內的callback function會再發生駁回時呼叫
+    //     let p=new promise((resolve,reject)=>{
+    //         setTimeout(()=>{
+    //             Math.random()>.5?resolve('ok'):reject('fail');
+    //         },500)
+    //     }) ;
+
+    //     p.then(result=>{
+    //         console.log('result:',result);
+    //     })
+    //         .catch(ex=>{
+    //             //只捕捉在此之前的駁回狀態  (*catch()通常放最後面)
+    //             console.log('ex',ex);
+    //         })
+    //         .then(()=>{
+    //             console.log('3rd');
+    //         });
+    const p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // resolve("aaaa");
+          reject("errorrrrrrrr-");
+        }, 1000);
+      });
+
+      p.then((result) => {
+        console.log({ result });
+      }).catch((ex) => console.log(ex));
+    </script>
+</body>
+</html>

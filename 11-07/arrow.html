@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function a(){
+            console.log("a",this);
+        }
+        const aa=function (){
+            console.log("aa",this);
+        };
+        const aaa=()=>{
+            console.log("aaa",this);
+        };
+        const objA={
+            name:"objA",
+            a,
+            aa,
+            aaa,
+        };
+        const objB={
+            name:"objB",
+            a,
+            aa,
+            aaa,
+        };
+        a();
+        aa();
+        aaa();
+        
+        
+      objA.a();
+      objA.aa();
+      objA.aaa();
+      objB.a();
+      objB.aa();
+      objB.aaa();
+    </script>
+</body>
+</html>

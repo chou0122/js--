@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+      </head>
+      <body>
+        
+   
+    <script>
+      const p1 = {
+        name: {
+          first: "John",
+          last: "Wick",
+        },
+        age: 25,
+        gender: "male",
+      };
+
+      //const p2 = JSON.parse(JSON.stringify(p1)); //深層複製(舊方法)
+      //const q1 = structuredClone(p1); //深層複製(新方法)
+
+      p1.age = 30;
+      p1.name.last = "Doe";
+
+
+      console.log({p1});
+      console.log({p2});
+    </script>
+  </body>
+</html>
+

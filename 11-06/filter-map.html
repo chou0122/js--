@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const a=[7,3,6,2,5,13,54,6,24];
+        let aa=a.filter(function(val){
+            return val%2===0;
+        });
+        rect.innerHTML=aa.toString()+'<br>';
+        let aaa=a.map(function(val){
+            return val*2;
+        });
+        rect.innerHTML=aaa.toString()+'<br>';
+
+        let b=a.filter(function(val){
+            var className=val%2 ?'':'red';
+            return `<span class="${className}">${val}</span>`;
+        });
+        rect.innerHTML=b.toString()+'<br>';
+
+    </script>
+</body>
+</html>

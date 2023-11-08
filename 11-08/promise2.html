@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //依序執行兩段非同步的程式片段
+        const p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // resolve("aaaa");
+          reject("error");
+        }, 1000);
+      });
+
+      p.then((result) => {
+        console.log({ result });
+      }).catch((ex) => console.log(ex));
+        new promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve('123');
+            },1000);
+        })
+        .then(result=>{
+            console.log(result);
+        });
+
+    </script>
+</body>
+</html>

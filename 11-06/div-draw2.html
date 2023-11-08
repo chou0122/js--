@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .rect {
+        position: relative;
+        width: 800px;
+        height: 600px;
+        background-color: #e7f5f7;
+        border: 1px solid #cccccc;
+        /* pointer-events: none; */ /* 不要讓元素感應到滑鼠 */
+      }
+
+      .ball {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgb(224, 210, 140);
+        border: 1px solid black;
+        left: 200px;
+        top: 50px;
+        pointer-events: none;   /* 不要讓元素感應到滑鼠 */
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="rect"></div>
+    <div id="info" style="position: fixed; left: 50%; top: 0"></div>
+    <script>
+      const rect = document.querySelector(".rect");
+      function getRandomRGB() {
+        let s = Math.floor(16777216 * Math.random()).toString(16);
+        s = s.padStart(6, "0");
+        return "#" + s;
+      }
+
+      const mDown = (e) => {
+        rect.addEventListener("mousemove", mMove);
+      };
+      const mUp = (e) => {
+        rect.removeEventListener("mousemove", mMove);
+      };
+      const mMove = (e) => {
+        const size = 10 + Math.floor(Math.random() * 21);
+        const b = document.createElement("div");
+        b.className = "ball";
+        b.style.left = e.offsetX - size / 2 + "px";
+        b.style.top = e.offsetY - size / 2 + "px";
+        b.style.backgroundColor = getRandomRGB();
+        b.style.width = size + "px";
+        b.style.height = size + "px";
+        rect.append(b);
+      };
+
+      rect.addEventListener("mousedown", mDown);
+      window.addEventListener("mouseup", mUp);
+    </script>
+  </body>
+</html>

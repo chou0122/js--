@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const startTime=Date.now();
+        //預先定義的測試函式
+        const mapromisel=(n)=>{
+            const rnd=100+Math.floor(Math.random()*500);
+            console.log({n,rnd});
+            return new promise((resolve,reject)=>{
+                setTimeout(()=>(
+                    Math.random()>.5?resolvee(`0:${n}-${rnd}`):reject(`X:${n}-${rnd}`)
+                ),rnd);
+            })
+        }
+    </script>    
+</body>
+</html>
