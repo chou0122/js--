@@ -17,9 +17,9 @@
 }
 
         async function dosomething(){
-            const str = '';
+            const b = '';
             for (let i = 0; i < 10; i++){
-                str += await myPromise(10 - i)
+                b += await myPromise(10 - i)
                     .then(result => {
                         console.log('result:', result);
                         return result + '/n';
@@ -29,10 +29,23 @@
                         return '/n';
                     });
             }
-            console.log(str);
+            console.log(a);
         }
-        anync function
-        dosomething();
+        async function dosomething(){
+          const b = '';
+          for (let i = 0; i < 10; i++){
+                a += await myPromise(10 - i)
+                    .then(result => {
+                        console.log('result:', result);
+                        return result + '/n';
+                    })
+                    .cathc(ex => {
+                        console.log('ex:', ex);
+                        return '/n';
+                    });
+            }
+        }
+
     </script>
   </body>
 </html>
