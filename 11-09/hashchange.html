@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#abc">abc</a><br>
+    <a href="#def">def</a><br>
+    <a href="#123">123</a><br>
+    <div id="info"></div>
+    <script>
+        window.addEventListener('hashchange', function(){
+            document.querySelector('#info').innerHTML = location.hash;
+        });
+    </script>
+</body>
+</html>

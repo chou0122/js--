@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regular-expression</title>
+</head>
+<body>
+    <script>
+        var re1 = /\sbe\s/i;
+        var re2 = new RegExp('\\sbe\\s', 'i');
+        var str = "b be bEAch bead Beaker BEAN bee being abbey abet";
+        var re = /\sbe/ig;   //移除g跟再試一次
+        console.log(str.search(re));
+        console.log(str.match(re));
+        console.log(str.replace(re, "**"));
+        console.log(str.split(re));
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popstate-button</title>
+</head>
+<body>
+    <a href="#abc">abc</a><br>
+    <a href="#def">def</a><br>
+    <a href="#123">123</a><br>
+    <button onclick="pushState()">click here</button>
+    
+    <!-- <div id="info"></div> -->
+    <script>
+        if (pushState = "1"){
+
+        }
+        let count = 1;
+        function pushState(){
+            count++;
+            history.pushState({count}, '', `/hello/${count}?id=${count}`);
+        }
+        window.addEventListener('popstate', function(){
+            document.querySelector('#info').innerHTML = location.hash;
+        });
+    </script>
+</body>
+</html>
